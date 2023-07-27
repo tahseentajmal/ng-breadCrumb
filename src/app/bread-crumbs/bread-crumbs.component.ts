@@ -9,7 +9,7 @@ import { Input } from "@angular/core";
   styleUrls: ["./bread-crumbs.component.css"]
 })
 export class BreadCrumbsComponent implements OnInit {
-  
+
   @Input()
   public deliminator: string = ">";
 
@@ -19,7 +19,7 @@ export class BreadCrumbsComponent implements OnInit {
 
   ngOnInit() {
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      // .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         this.breadcrumbs = [];
         let currentRoute = this.activatedRoute.root,
