@@ -1,11 +1,21 @@
+<div style="border: 1px solid rgb(240, 240, 240); border-radius: 5px;padding: 5px;width: auto;">
+  <span style="display: inline-flex;align-items: flex-start;height: 21px;"
+    *ngFor="let breadcrumb of breadcrumbs; let last = last,index as i">
+    <a style="
+        font-family: Arial;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 21px;
+        align-items: center;text-decoration: none;gap: 6px;" [routerLink]="breadcrumb.url">
+        <span *ngIf="last" style="color: #005CC9;font-weight: 500;">{{this.breadcrumbs[i].label.breadCrumb}}</span>
+        <span *ngIf="!last" style="color:#364E68;">{{this.breadcrumbs[i].label.breadCrumb}}</span>
 
-<div>
-    <span *ngFor="let breadcrumb of breadcrumbs; let last = last">
-      <small>
-        <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a></small
-      >
-      <span *ngIf="!last"
-        ><small> {{ deliminator }} </small></span
-      >
-    </span>
-  </div>
+    </a>
+    <span *ngIf="!last" style="color: #364E68;"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+        viewBox="0 0 20 21" fill="none">
+        <path d="M7.5 15.1562L12.5 10.1562L7.5 5.15625" stroke="#364E68" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg> </span>
+  </span>
+</div>

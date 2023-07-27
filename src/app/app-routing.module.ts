@@ -19,12 +19,12 @@ const routes: Routes = [
           {
             path: "grand-child",
             component: GrandChildPageComponent,
-            data:{breadCrumb:"Grand-Child"},
+            data:{breadCrumb:"Grand Child"},
             children: [
               {
                 path: "great-grand-child",
                 component: GreatGrandChildPageComponent,
-                data:{breadCrumb:"Great-Grand-Child"},
+                data:{breadCrumb:"Great Grand Child"},
               }
             ]
           }

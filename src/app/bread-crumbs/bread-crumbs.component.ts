@@ -9,17 +9,18 @@ import { Input } from "@angular/core";
   styleUrls: ["./bread-crumbs.component.css"]
 })
 export class BreadCrumbsComponent implements OnInit {
+  
   @Input()
   public deliminator: string = ">";
 
-  breadcrumbs: Array<{ label: string; url: string }>;
+  breadcrumbs: Array<{ label: any; url: string }>;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(event => {
+      .subscribe(() => {
         this.breadcrumbs = [];
         let currentRoute = this.activatedRoute.root,
           url = "";
@@ -29,14 +30,12 @@ export class BreadCrumbsComponent implements OnInit {
           childrenRoutes.forEach(route => {
             if (route.outlet === "primary") {
               const routeSnapshot = route.snapshot;
-
-              url +=
-                "/" + routeSnapshot.url.map(segment => segment.path).join("/");
+              url += "/" + routeSnapshot.url.map(segment => segment.path).join("/");
               this.breadcrumbs.push({
-                label: route.snapshot.data.breadcrumb,
+                label: route.snapshot.data,
                 url: url
               });
-
+              console.log(this.breadcrumbs[0].label.breadCrumb);
               currentRoute = route;
             }
           });
