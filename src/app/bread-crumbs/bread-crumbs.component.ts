@@ -14,12 +14,11 @@ export class BreadCrumbsComponent implements OnInit {
   public deliminator: string = ">";
 
   breadcrumbs: Array<{ label: any; url: string }>;
-
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.router.events
-      // .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         this.breadcrumbs = [];
         let currentRoute = this.activatedRoute.root,
@@ -35,7 +34,7 @@ export class BreadCrumbsComponent implements OnInit {
                 label: route.snapshot.data,
                 url: url
               });
-              console.log(this.breadcrumbs[0].label.breadCrumb);
+              // console.log(this.breadcrumbs[0].label.breadCrumb);
               currentRoute = route;
             }
           });
