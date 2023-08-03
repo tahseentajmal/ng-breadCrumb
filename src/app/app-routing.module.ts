@@ -7,6 +7,8 @@ import { GreatGrandChildPageComponent } from './great-grand-child-page/great-gra
 import { ChildTwoComponent } from './child-two/child-two.component';
 import { GrandChildTwoComponent } from './grand-child-two/grand-child-two.component';
 import { GreatGrandChildTwoComponent } from './great-grand-child-two/great-grand-child-two.component';
+import { ShortCodeComponent } from './short-code/short-code.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -27,8 +29,15 @@ const routes: Routes = [
               {
                 path: "great-grand-child",
                 component: GreatGrandChildPageComponent,
-                data: { breadCrumb: "Great Grand Child" }
-              }
+                data: { breadCrumb: "Great Grand Child" },
+                children:[
+                  {
+                    path: "shortcode/:id",
+                    component: PageNotFoundComponent,
+                    data: { breadCrumb: "ShortCode" }
+                  }
+                ]
+              },
             ]
           }
         ]

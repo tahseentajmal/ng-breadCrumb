@@ -1,0 +1,26 @@
+<div style="border: 1px solid rgb(240, 240, 240); border-radius: 5px; padding: 5px; width: auto;">
+    <ng-container *ngFor="let trail of historyTrails; let last = last; index as i">
+      <span style="display: inline-flex; align-items: flex-start; height: 21px;">
+        <a style="
+          font-family: Arial;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 21px;
+          align-items: center;
+          text-decoration: none;
+          gap: 6px;" 
+          [routerLink]="trail.url">
+          <span [style.color]="last ? '#005CC9' : '#364E68'">
+            {{ trail.label }}
+          </span>
+        </a>
+        <span *ngIf="!last">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+            <path d="M7.5 15.1562L12.5 10.1562L7.5 5.15625" stroke="#364E68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </span>
+    </ng-container>
+  </div>
+  

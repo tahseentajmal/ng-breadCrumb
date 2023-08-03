@@ -1,0 +1,9 @@
+<br><br>
+<p>short-code list</p>
+<ul>
+    <button  (click)="onSelect(code);fireEvent()" *ngFor="let code of shortCode">
+        <span>{{code.name}}</span>
+    </button>
+    
+</ul>
+<br><br>

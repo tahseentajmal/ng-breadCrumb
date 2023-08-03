@@ -11,6 +11,11 @@ import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
 import { ChildTwoComponent } from './child-two/child-two.component';
 import { GrandChildTwoComponent } from './grand-child-two/grand-child-two.component';
 import { GreatGrandChildTwoComponent } from './great-grand-child-two/great-grand-child-two.component';
+import { HistoryTrailsComponent } from './history-trails/history-trails.component';
+import { ShortCodeComponent } from './short-code/short-code.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -22,11 +27,15 @@ import { GreatGrandChildTwoComponent } from './great-grand-child-two/great-grand
     BreadCrumbsComponent,
     ChildTwoComponent,
     GrandChildTwoComponent,
-    GreatGrandChildTwoComponent
+    GreatGrandChildTwoComponent,
+    HistoryTrailsComponent,
+    ShortCodeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
