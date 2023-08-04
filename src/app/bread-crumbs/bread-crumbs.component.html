@@ -9,6 +9,7 @@
         line-height: 21px;
         align-items: center;text-decoration: none;gap: 6px;" [routerLink]="breadcrumb.url">
       <span *ngIf="last" style="color: #005CC9;font-weight: 500;" >{{this.breadcrumbs[i].label.breadCrumb}} </span>
+      <span *ngIf="this.breadcrumbs[i].label.breadCrumb==='ShortCode'" style="color: #005CC9;font-weight: 500;" >  {{shortCode}} </span>
       <span *ngIf="!last" style="color:#364E68;">{{this.breadcrumbs[i].label.breadCrumb}} </span>
     </a>
     <span *ngIf="!last">
@@ -17,4 +18,4 @@
       </svg>
     </span>
   </span>
-</div>
+</div>  

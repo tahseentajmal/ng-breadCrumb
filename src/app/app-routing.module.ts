@@ -30,7 +30,12 @@ const routes: Routes = [
                 path: "great-grand-child",
                 component: GreatGrandChildPageComponent,
                 data: { breadCrumb: "Great Grand Child" },
-                children:[
+                children: [
+                  {
+                    path: "shortcode",
+                    component: PageNotFoundComponent,
+                    data: { breadCrumb: "ShortCode " }
+                  },
                   {
                     path: "shortcode/:id",
                     component: PageNotFoundComponent,

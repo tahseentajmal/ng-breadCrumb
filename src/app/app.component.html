@@ -1,7 +1,5 @@
 <h6 style="margin: 4px;">BreadCrumb</h6>
-<app-bread-crumbs ></app-bread-crumbs>
-
+<app-bread-crumbs [shortCode]="shortCode" ></app-bread-crumbs>
 <br><br>
 <router-outlet></router-outlet>
-
-<app-short-code></app-short-code>
+<app-short-code (childEvent)="receiveMessage($event)"></app-short-code>

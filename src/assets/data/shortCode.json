@@ -3,5 +3,6 @@
     {"id":2, "name":"Nike","code":"NIK"},
     {"id":3, "name":"Puma","code":"PUM"},
     {"id":4, "name":"Underarmour","code":"UND"},
-    {"id":5, "name":"Classic","code":"CFA"}
+    {"id":5, "name":"Classic","code":"CFA"},
+    {"id":6, "name":"CTEBS","code":"CTEB"}
 ]

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 import { filter } from "rxjs/operators";
 import { BreadCrumbsService } from "../bread-crumbs.service";
@@ -12,25 +12,16 @@ import { BreadCrumbsService } from "../bread-crumbs.service";
 })
 export class BreadCrumbsComponent implements OnInit {
 
+  @Input() shortCode: any = [];
   breadcrumbs: any;
-  shortCode: any = [];
-  public Id : any 
-  shortname : any
-  constructor(private router: Router, private route: ActivatedRoute, private bcs : BreadCrumbsService) {
-   }
-
-  
+  shortname: any;
+  constructor(private router: Router, private route: ActivatedRoute, private bcs: BreadCrumbsService) { }
 
   ngOnInit() {
-    let id = parseInt(this.route.snapshot.paramMap.get('id')!) 
-    this.Id = id
-    
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
-        this.breadcrumbs = this.bcs.createBreadcrumbs(this.route.root); 
+        this.breadcrumbs = this.bcs.createBreadcrumbs(this.route.root);
       });
   }
-
-  
 }

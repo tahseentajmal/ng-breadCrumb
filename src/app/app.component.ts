@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-breadcrumb';
+  shortCode : any;
+  
+  receiveMessage($event : any){
+    this.shortCode= '('+$event+')';
+  }
+
 }
