@@ -1,9 +1,7 @@
-import { AfterViewInit, Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 import { filter } from "rxjs/operators";
 import { BreadCrumbsService } from "../bread-crumbs.service";
-// import { ShortCodeService } from "../short-code.service";
-// import { ShortCodeComponent } from "../short-code/short-code.component";
 
 @Component({
   selector: "app-bread-crumbs",
@@ -16,7 +14,7 @@ export class BreadCrumbsComponent implements OnInit {
   breadcrumbs: any;
   shortname: any;
   constructor(private router: Router, private route: ActivatedRoute, private bcs: BreadCrumbsService) { }
-
+  
   ngOnInit() {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))

@@ -12,5 +12,6 @@ export class AppComponent {
   receiveMessage($event : any){
     this.shortCode= '('+$event+')';
   }
+  
 
 }

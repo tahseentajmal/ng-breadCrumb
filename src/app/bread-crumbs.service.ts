@@ -5,15 +5,18 @@ import { ActivatedRoute } from '@angular/router';
   providedIn: 'root'
 })
 export class BreadCrumbsService {
+
+  breadCrumbsArray = ['Home','Administartion']
   createBreadcrumbs(route: ActivatedRoute, url: string = '', breadcrumbs: any[] = []): any {
     const childrenRoutes = route.children;
+    
     if (childrenRoutes.length === 0) {
       return breadcrumbs;
     }
     for (let childRoute of childrenRoutes) {
       if (childRoute.outlet === "primary") {
         const routeSnapshot = childRoute.snapshot;
-        // Append the URL for the current breadcrumb with the path segment of the current child route
+        console.log(routeSnapshot);
         url += "/" + routeSnapshot.url.map(segment => segment.path).join("/");
         breadcrumbs.push({
           label: routeSnapshot.data,
@@ -23,4 +26,10 @@ export class BreadCrumbsService {
       }
     }
   }
+
+  push(label:string,route:ActivatedRoute){
+    route.snapshot.data
+  }
+
+
 }

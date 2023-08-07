@@ -14,23 +14,23 @@ export class ShortCodeComponent implements OnInit {
   shortcompanyname: any;
   constructor(private scs: ShortCodeService, private route: Router) { }
 
-
   ngOnInit() {
     this.scs.getShortCode()
       .subscribe((e) => {
         this.shortCode = e;
       })
   }
+
   onSelect(code: any) {
     this.route.navigate(['//child/grand-child/great-grand-child/shortcode', code.id])
     this.shortcompanyname = this.shortCode[code.id - 1].code;
     console.log(this.shortcompanyname);
   }
+  
   fireEvent() {
     this.childEvent.emit(this.shortcompanyname)
     console.log(this.childEvent);
   }
-
 
 }
 

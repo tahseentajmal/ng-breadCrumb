@@ -11,12 +11,14 @@ export class ShortCodeService {
   shortcompanyname: any;
   shortcod: any
   private _url: string = "../assets/data/shortCode.json"
+
   constructor(private http: HttpClient, private route: Router) { }
+
   getShortCode(): Observable<IShortCode[]> {
     return this.http.get<IShortCode[]>(this._url)
   }
-  onSelection(code: any) {
-    this.route.navigate(['//child/grand-child/great-grand-child/shortcode', code.id])
-    this.shortcompanyname = code.code;
-  }
+  // onSelection(code: any) {
+  //   this.route.navigate(['//child/grand-child/great-grand-child/shortcode', code.id])
+  //   this.shortcompanyname = code.code;
+  // }
 }
