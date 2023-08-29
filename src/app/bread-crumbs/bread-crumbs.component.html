@@ -22,7 +22,7 @@
 <br><br>
 <div style="border: 1px solid rgb(240, 240, 240); border-radius: 5px;padding: 5px;width: auto;">
   <span style="display: inline-flex;align-items: flex-start;height: 21px;"
-    *ngFor="let breadcrumb of breadcrumbs; let last = last,index as i">
+    *ngFor="let breadcrumb of bcArray; let last = last,index as i">
     <a style="
         font-family: Arial;
         font-size: 14px;
@@ -30,9 +30,9 @@
         font-weight: 400;
         line-height: 21px;
         align-items: center;text-decoration: none;gap: 6px;" [routerLink]="breadcrumb.url">
-      <span *ngIf="last" style="color: #005CC9;font-weight: 500;" >{{this.breadcrumbs[i].label.breadCrumb}} </span>
+      <span *ngIf="last" style="color: #005CC9;font-weight: 500;" >{{breadcrumb.label}} </span>
       <span *ngIf="this.breadcrumbs[i].label.breadCrumb==='ShortCode'" style="color: #005CC9;font-weight: 500;" >  {{shortCode}} </span>
-      <span *ngIf="!last" style="color:#364E68;">{{this.breadcrumbs[i].label.breadCrumb}} </span>
+      <span *ngIf="!last" style="color:#364E68;">{{breadcrumb.label}} </span>
     </a>
     <span *ngIf="!last">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">

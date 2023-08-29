@@ -14,6 +14,8 @@ export class BreadCrumbsComponent implements OnInit {
   breadcrumbs: any;
   shortname: any;
   constructor(private router: Router, private route: ActivatedRoute, private bcs: BreadCrumbsService) { }
+  bcArray : any = this.bcs.breadCrumbsArray
+
   
   ngOnInit() {
     this.router.events
