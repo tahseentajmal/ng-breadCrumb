@@ -6,7 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BreadCrumbsService {
 
-  breadCrumbsArray = ['Home','Administartion']
+  breadCrumbsArray : any = [{label: 'Home', url: ''}]
+
+
   createBreadcrumbs(route: ActivatedRoute, url: string = '', breadcrumbs: any[] = []): any {
     const childrenRoutes = route.children;
     
@@ -28,8 +30,26 @@ export class BreadCrumbsService {
   }
 
   push(label:string,route:ActivatedRoute){
-    route.snapshot.data
+    const routeSnapshot = route.snapshot;
+    console.log(routeSnapshot);
+    let url = this.getFullPath(routeSnapshot);
+    this.breadCrumbsArray.push({
+      label: label,
+      url: url
+    });
+    console.log(this.breadCrumbsArray, "is the bc array");
+  }
+  private getFullPath(route: any): string {
+    return route?._routerState?.url;
   }
 
+  pop(label: string) {
+    const index = this.breadCrumbsArray.findIndex((e:any) => e.label === label );
+    if (index !== -1) {
+      this.breadCrumbsArray.splice(index, 1);
+    } 
+    console.log(this.breadCrumbsArray);
+  }
+  
 
 }

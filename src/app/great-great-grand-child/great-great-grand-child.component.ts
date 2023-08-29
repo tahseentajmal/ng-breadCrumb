@@ -3,12 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { BreadCrumbsService } from '../bread-crumbs.service';
 
 @Component({
-  selector: 'app-great-grand-child-page',
-  templateUrl: './great-grand-child-page.component.html',
-  styleUrls: ['./great-grand-child-page.component.css']
+  selector: 'app-great-great-grand-child',
+  templateUrl: './great-great-grand-child.component.html',
+  styleUrls: ['./great-great-grand-child.component.css']
 })
-export class GreatGrandChildPageComponent {
-  label : any = "Children 3"
+export class GreatGreatGrandChildComponent {
+  label : any = "Children 4"
 
   constructor(
     private bcs : BreadCrumbsService,
@@ -17,7 +17,6 @@ export class GreatGrandChildPageComponent {
 
 
   ngOnInit() {
-    console.log("ngoninit ch 4 triggered");
     
     this.bcs.push(this.label,this.route)
     

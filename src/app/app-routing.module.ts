@@ -9,6 +9,7 @@ import { GrandChildTwoComponent } from './grand-child-two/grand-child-two.compon
 import { GreatGrandChildTwoComponent } from './great-grand-child-two/great-grand-child-two.component';
 import { ShortCodeComponent } from './short-code/short-code.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GreatGreatGrandChildComponent } from './great-great-grand-child/great-great-grand-child.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,11 @@ const routes: Routes = [
                 component: GreatGrandChildPageComponent,
                 data: { breadCrumb: "Great Grand Child" },
                 children: [
+                  {
+                    path: "great-great-grand-child",
+                    component: GreatGreatGrandChildComponent,
+                    data: { breadCrumb: "ShortCode " }
+                  },
                   {
                     path: "shortcode",
                     component: PageNotFoundComponent,

@@ -15,6 +15,7 @@ import { HistoryTrailsComponent } from './history-trails/history-trails.componen
 import { ShortCodeComponent } from './short-code/short-code.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GreatGreatGrandChildComponent } from './great-great-grand-child/great-great-grand-child.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     GreatGrandChildTwoComponent,
     HistoryTrailsComponent,
     ShortCodeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    GreatGreatGrandChildComponent
   ],
   imports: [
     BrowserModule,
